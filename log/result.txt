@@ -1,0 +1,50 @@
+13:58:01,284 root INFO tfidf_matrix shape: (9099, 268124)
+14:01:18,397 root INFO tfidf_matrix shape: (9099, 268124)
+14:01:19,233 root INFO Top 10 recommendations for the movie: The Godfather:
+973      The Godfather: Part II
+8387                 The Family
+3509                       Made
+4196         Johnny Dangerously
+29               Shanghai Triad
+5667                       Fury
+2412             American Movie
+1582    The Godfather: Part III
+4221                    8 Women
+2159              Summer of Sam
+Name: title, dtype: object
+14:01:19,238 root INFO Top 10 recommendations for the movie: The Dark Knight:
+7931                      The Dark Knight Rises
+132                              Batman Forever
+1113                             Batman Returns
+8227    Batman: The Dark Knight Returns, Part 2
+7565                 Batman: Under the Red Hood
+524                                      Batman
+7901                           Batman: Year One
+2579               Batman: Mask of the Phantasm
+2696                                        JFK
+8165    Batman: The Dark Knight Returns, Part 1
+Name: title, dtype: object
+14:01:39,571 root INFO Top 10 movies for person with id 1, movie: Avatar:
+                                title  vote_count  vote_average  year     id       est
+2059                       The Matrix      9079.0           7.9  1999    603  3.424467
+975                   A Grand Day Out       199.0           7.4  1990    530  3.248098
+6105               A Trip to the Moon       314.0           7.9  1902    775  3.087922
+1898                    A Simple Plan       191.0           6.9  1998  10223  3.023812
+4804                           Avalon        93.0           6.8  2001  10881  3.001981
+3360                         The Dish        62.0           6.6  2000   5257  2.894778
+2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  2.862747
+7587                     The American       488.0           5.8  2010  27579  2.818013
+5044                          The Men        18.0           6.5  1950   1882  2.789759
+4506                 Tears of the Sun       582.0           6.4  2003   9567  2.755546
+14:01:39,587 root INFO Top 10 movies for person with id 500, movie: Avatar:
+                                title  vote_count  vote_average  year     id       est
+1898                    A Simple Plan       191.0           6.9  1998  10223  3.558639
+975                   A Grand Day Out       199.0           7.4  1990    530  3.443958
+7050                  Pride and Glory       243.0           6.3  2008  13150  3.375154
+6105               A Trip to the Moon       314.0           7.9  1902    775  3.306259
+7587                     The American       488.0           5.8  2010  27579  3.157717
+2854                       The Hidden        85.0           6.7  1987  12476  3.148679
+5229                           Ambush        13.0           6.3  1999  49320  3.147816
+2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  3.145885
+4804                           Avalon        93.0           6.8  2001  10881  3.091535
+4328                     Dog Soldiers       227.0           6.7  2002  11880  3.086908
