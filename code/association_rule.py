@@ -5,6 +5,11 @@ import plotly.express as px
 
 from apyori import apriori
 import logging
+logging.basicConfig(filename="../log/result_association.txt",
+                            filemode='a',
+                            format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                            datefmt='%H:%M:%S',
+                            level=logging.DEBUG)
 
 def load_data(filename='../input/Groceries_dataset.csv'):
     """

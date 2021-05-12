@@ -15,7 +15,7 @@ import logging
 
 import warnings; warnings.simplefilter('ignore')
 
-logging.basicConfig(filename="../log/result.txt",
+logging.basicConfig(filename="../log/result_contentBased.txt",
                             filemode='a',
                             format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                             datefmt='%H:%M:%S',
@@ -68,7 +68,7 @@ def get_mean_vote(md):
     C = vote_averages.mean()
     return C
 
-def get_small_movies_metatdata(md): 
+def get_small_movies_metatdata(md, links_small): 
     """
     This function for: 
         get small movies meta data.
@@ -85,8 +85,6 @@ def get_small_movies_metatdata(md):
     md['id'] = md['id'].astype('int')
     smd = md[md['id'].isin(links_small)]
     return smd
-
-
 
 
 
@@ -146,18 +144,6 @@ def get_recommendations(title, cosine_sim, titles):
     return titles.iloc[movie_indices]
 
 
-
-
-
-
-
-
-
-
-# Hybrid Recommender
-# Input: User ID and the Title of a Movie
-# Output: Similar movies sorted on the basis of expected ratings by that particular user.
-
 def convert_int(x):
     """
     THis function for: convert x to int
@@ -167,81 +153,6 @@ def convert_int(x):
     except:
         return np.nan
 
-def get_movieID_indMovie(convert_int, smd, filename='../input/links_small.csv'):
-    """
-    This function for: 
-        get movies id, index of movies
-    Args:
-        convert_int: function
-        smd: small metadata
-        filename: path to csv file 
-    Return:    
-        id_map: movies id            
-        indices_map:  index of movies
-    """         
-    id_map = pd.read_csv(filename)[['movieId', 'tmdbId']]
-    id_map['tmdbId'] = id_map['tmdbId'].apply(convert_int)
-    id_map.columns = ['movieId', 'id']
-    id_map = id_map.merge(smd[['title', 'id']], on='id').set_index('title')
-
-    indices_map = id_map.set_index('id')
-    return id_map, indices_map
-
-
-
-def read_and_train_svd(filename='../input/ratings_small.csv'):
-    """
-    This function for: 
-        read data and train SVD alg to fit data.
-    Args:
-        filename: path to data.
-    Return:    
-        svd : SVD alg after training with the dataset.
-    """ 
-    reader = Reader()
-    ratings = pd.read_csv(filename)
-    ratings.head()
-
-    data = Dataset.load_from_df(ratings[['userId', 'movieId', 'rating']], reader)
-    svd = SVD()
-    # Run 5-fold cross-validation and then print results
-    cross_validate(svd, data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
-
-    trainset = data.build_full_trainset()
-    svd.fit(trainset)
-    return svd
-
-
-def hybrid(userId, title, indices, id_map, cosine_sim, smd, indices_map):
-    """
-    This function for: 
-        build a simple hybrid recommender that brings together techniques
-        we have implemented in the content based and collaborative filter based engines.    
-    Args:
-        userId: User ID 
-        title: the Title of a Movie
-        indices : a list of movie indices 
-        id_map: movies id      
-        cosine_sim : similarity between 2 movies
-        smd : small meta data
-        indices_map: a list of movie indices    
-    Return:    
-        10 similar movies sorted on the basis of expected ratings by that particular user.
-    """     
-    idx = indices[title]
-    tmdbId = id_map.loc[title]['id']
-    #print(idx)
-    movie_id = id_map.loc[title]['movieId']
-    
-    sim_scores = list(enumerate(cosine_sim[int(idx)]))
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[1:26]
-    movie_indices = [i[0] for i in sim_scores]
-    
-    movies = smd.iloc[movie_indices][['title', 'vote_count', 'vote_average', 'year', 'id']]
-    movies['est'] = movies['id'].apply(lambda x: svd.predict(userId, indices_map.loc[x]['movieId']).est)
-    movies = movies.sort_values('est', ascending=False)
-    return movies.head(10)
 
 
 if __name__ == "__main__":
@@ -250,7 +161,7 @@ if __name__ == "__main__":
     links_small, md = load_data()
     m = get_vote_counts(md)
     C = get_mean_vote(md)
-    smd = get_small_movies_metatdata(md)
+    smd = get_small_movies_metatdata(md, links_small)
     smd, tfidf_matrix = get_quantitative_matrix(smd)
     cosine_sim = get_similarity_between2movies(tfidf_matrix)
 
@@ -259,14 +170,4 @@ if __name__ == "__main__":
     indices = pd.Series(smd.index, index=smd['title'])
     logging.info(f"Top 10 recommendations for the movie: The Godfather:\n{get_recommendations('The Godfather', cosine_sim, titles).head(10)}")
     logging.info(f"Top 10 recommendations for the movie: The Dark Knight:\n{get_recommendations('The Dark Knight',  cosine_sim, titles).head(10)}")
-
-
-# Hybrid Recommender
-
-    id_map, indices_map = get_movieID_indMovie(convert_int, smd)
-    svd = read_and_train_svd()
-    logging.info(f"Top 10 movies for person with id 1, movie: Avatar:\n{hybrid(1, 'Avatar', indices, id_map, cosine_sim, smd, indices_map)}")
-    logging.info(f"Top 10 movies for person with id 500, movie: Avatar:\n{hybrid(500, 'Avatar', indices, id_map, cosine_sim, smd, indices_map)}")
-
-
-            
+   
