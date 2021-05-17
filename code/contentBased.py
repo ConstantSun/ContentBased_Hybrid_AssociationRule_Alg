@@ -156,16 +156,23 @@ def convert_int(x):
 
 
 if __name__ == "__main__":
-
+    # Load all dataset
     links_small, md = load_data()
+    # Get total number of votes 
     m = get_vote_counts(md)
+    # Get the mean of votes
     C = get_mean_vote(md)
+    # Load small dataset
     smd = get_small_movies_metatdata(md, links_small)
+    # Calculate quantitative matrix
     smd, tfidf_matrix = get_quantitative_matrix(smd)
+    # Calculate tfidf matrix - similarity between 2 movies
     cosine_sim = get_similarity_between2movies(tfidf_matrix)
-
+    
     smd = smd.reset_index()
+    # Get titles of movies
     titles = smd['title']
+    # Get indices of movies
     indices = pd.Series(smd.index, index=smd['title'])
     logging.info(f"Top 10 recommendations for the movie: The Godfather:\n{get_recommendations('The Godfather', cosine_sim, titles).head(10)}")
     logging.info(f"Top 10 recommendations for the movie: The Dark Knight:\n{get_recommendations('The Dark Knight',  cosine_sim, titles).head(10)}")

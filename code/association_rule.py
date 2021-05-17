@@ -149,15 +149,20 @@ def association_rules(transactions):
 
 
 if __name__ == "__main__":
-
+    # Load the dataset
     df = load_data()
+    # Get all products
     all_products = get_total_product(df)     
 
+    # Get top 10 products that sold frequently
     x = get_top10_frequently_sold(df)
+    # Visualize them
     ditribution_plot(x=x.index, y=x.values, yaxis="Count", xaxis="Products")
 
+    # Turn into one hot representation
     df = get_onehot_presentation(df)
 
+    # Get all records 
     records = df.groupby(["Member_number","Date"])[all_products[:]].apply(sum)
     records = records.reset_index()[all_products]
 
@@ -165,6 +170,7 @@ if __name__ == "__main__":
     records.head()
 
     logging.info(f"total transactions: {len(records)}")
-
+    # Remove error transactions
     transactions = remove_zeros(records)
+    # Appy association_rules
     association_rules(transactions)
