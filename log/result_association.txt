@@ -1,0 +1,198 @@
+16:36:21,431 root INFO    Member_number       Date   itemDescription
+0           1808 2015-07-21    tropical fruit
+1           2552 2015-05-01        whole milk
+2           2300 2015-09-19         pip fruit
+3           1187 2015-12-12  other vegetables
+4           3037 2015-01-02        whole milk
+16:36:21,445 root INFO any null value:
+Member_number      False
+Date               False
+itemDescription    False
+dtype: bool
+16:36:22,518 root INFO One-hot representation of products purchased:
+   Member_number       Date  Instant food products  UHT-milk  abrasive cleaner  artif. sweetener  ...  whisky  white bread  white wine  whole milk  yogurt  zwieback
+0           1808 2015-07-21                      0         0                 0                 0  ...       0            0           0           0       0         0
+1           2552 2015-05-01                      0         0                 0                 0  ...       0            0           0           1       0         0
+2           2300 2015-09-19                      0         0                 0                 0  ...       0            0           0           0       0         0
+3           1187 2015-12-12                      0         0                 0                 0  ...       0            0           0           0       0         0
+4           3037 2015-01-02                      0         0                 0                 0  ...       0            0           0           1       0         0
+
+[5 rows x 169 columns]
+16:36:47,583 root INFO total transactions: 14963
+16:36:47,739 root INFO Example transactions:
+[['whole milk', 'pastry', 'salty snack'], ['whole milk', 'yogurt', 'sausage', 'semi-finished bread'], ['soda', 'pickled vegetables'], ['canned beer', 'misc. beverages'], ['sausage', 'hygiene articles'], ['whole milk', 'rolls/buns', 'sausage'], ['whole milk', 'soda'], ['frankfurter', 'soda', 'whipped/sour cream'], ['frankfurter', 'curd'], ['beef', 'white bread']]
+16:36:48,650 root INFO Rule: specialty chocolate  ->  frozen fish
+16:36:48,650 root INFO Support:  0.0003341575887188398
+16:36:48,650 root INFO Confidence:  0.049019607843137254
+16:36:48,650 root INFO Lift:  3.0689556157190907
+16:36:48,650 root INFO =====================================
+16:36:48,650 root INFO Rule: liver loaf  ->  fruit/vegetable juice
+16:36:48,650 root INFO Support:  0.00040098910646260775
+16:36:48,650 root INFO Confidence:  0.011787819253438114
+16:36:48,650 root INFO Lift:  3.52762278978389
+16:36:48,650 root INFO =====================================
+16:36:48,650 root INFO Rule: pickled vegetables  ->  ham
+16:36:48,650 root INFO Support:  0.0005346521419501437
+16:36:48,650 root INFO Confidence:  0.03125
+16:36:48,650 root INFO Lift:  3.4895055970149254
+16:36:48,650 root INFO =====================================
+16:36:48,650 root INFO Rule: roll products   ->  meat
+16:36:48,650 root INFO Support:  0.0003341575887188398
+16:36:48,650 root INFO Confidence:  0.019841269841269844
+16:36:48,650 root INFO Lift:  3.620547812620984
+16:36:48,650 root INFO =====================================
+16:36:48,650 root INFO Rule: misc. beverages  ->  salt
+16:36:48,650 root INFO Support:  0.0003341575887188398
+16:36:48,650 root INFO Confidence:  0.0211864406779661
+16:36:48,650 root INFO Lift:  3.5619405827461437
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: spread cheese  ->  misc. beverages
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.0211864406779661
+16:36:48,651 root INFO Lift:  3.170127118644068
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: seasonal products  ->  soups
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.04716981132075471
+16:36:48,651 root INFO Lift:  14.704205974842766
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: spread cheese  ->  sugar
+16:36:48,651 root INFO Support:  0.00040098910646260775
+16:36:48,651 root INFO Confidence:  0.06
+16:36:48,651 root INFO Lift:  3.3878490566037733
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: bottled beer  ->  sausage
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.007374631268436578
+16:36:48,651 root INFO Lift:  3.8050554368833285
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: bottled beer  ->  whole milk
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.007374631268436578
+16:36:48,651 root INFO Lift:  3.9409502739148756
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: canned beer  ->  brown bread
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.008880994671403198
+16:36:48,651 root INFO Lift:  6.644316163410303
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: sausage  ->  canned beer
+16:36:48,651 root INFO Support:  0.00040098910646260775
+16:36:48,651 root INFO Confidence:  0.010657193605683837
+16:36:48,651 root INFO Lift:  4.309826700590467
+16:36:48,651 root INFO =====================================
+16:36:48,651 root INFO Rule: frankfurter  ->  soda
+16:36:48,651 root INFO Support:  0.0003341575887188398
+16:36:48,651 root INFO Confidence:  0.009487666034155597
+16:36:48,651 root INFO Lift:  3.086172758023265
+16:36:48,651 root INFO =====================================
+16:36:48,652 root INFO Rule: butter milk  ->  canned beer
+16:36:48,652 root INFO Support:  0.0003341575887188398
+16:36:48,652 root INFO Confidence:  0.019011406844106463
+16:36:48,652 root INFO Lift:  4.9046151829028455
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: sausage  ->  canned beer
+16:36:48,652 root INFO Support:  0.0003341575887188398
+16:36:48,652 root INFO Confidence:  0.007122507122507123
+16:36:48,652 root INFO Lift:  3.437873357228196
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: whole milk  ->  canned beer
+16:36:48,652 root INFO Support:  0.00040098910646260775
+16:36:48,652 root INFO Confidence:  0.008547008547008546
+16:36:48,652 root INFO Lift:  4.918803418803418
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: yogurt  ->  soda
+16:36:48,652 root INFO Support:  0.00040098910646260775
+16:36:48,652 root INFO Confidence:  0.03333333333333333
+16:36:48,652 root INFO Lift:  5.732950191570881
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: pork  ->  yogurt
+16:36:48,652 root INFO Support:  0.00040098910646260775
+16:36:48,652 root INFO Confidence:  0.004669260700389105
+16:36:48,652 root INFO Lift:  3.4933073929961087
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: frankfurter  ->  coffee
+16:36:48,652 root INFO Support:  0.0003341575887188398
+16:36:48,652 root INFO Confidence:  0.008849557522123895
+16:36:48,652 root INFO Lift:  3.6782202556538843
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: frankfurter  ->  coffee
+16:36:48,652 root INFO Support:  0.0003341575887188398
+16:36:48,652 root INFO Confidence:  0.010570824524312896
+16:36:48,652 root INFO Lift:  3.438505377332475
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: coffee  ->  sausage
+16:36:48,652 root INFO Support:  0.0003341575887188398
+16:36:48,652 root INFO Confidence:  0.010570824524312896
+16:36:48,652 root INFO Lift:  3.2952343199436225
+16:36:48,652 root INFO =====================================
+16:36:48,652 root INFO Rule: sausage  ->  curd
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.009920634920634922
+16:36:48,653 root INFO Lift:  5.497868900646679
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: sausage  ->  curd
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.009920634920634922
+16:36:48,653 root INFO Lift:  5.301516439909298
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: sausage  ->  curd
+16:36:48,653 root INFO Support:  0.00046782062420637575
+16:36:48,653 root INFO Confidence:  0.007751937984496124
+16:36:48,653 root INFO Lift:  3.4115367077063383
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: other vegetables  ->  sausage
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.022727272727272728
+16:36:48,653 root INFO Lift:  3.7785353535353536
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: rolls/buns  ->  pip fruit
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.022026431718061675
+16:36:48,653 root INFO Lift:  4.453804024288606
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: root vegetables  ->  shopping bags
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.01037344398340249
+16:36:48,653 root INFO Lift:  3.1043568464730287
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: yogurt  ->  sausage
+16:36:48,653 root INFO Support:  0.00040098910646260775
+16:36:48,653 root INFO Confidence:  0.0066445182724252485
+16:36:48,653 root INFO Lift:  3.106935215946843
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: newspapers  ->  sausage
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.006459948320413437
+16:36:48,653 root INFO Lift:  3.580007656235047
+16:36:48,653 root INFO =====================================
+16:36:48,653 root INFO Rule: onions  ->  tropical fruit
+16:36:48,653 root INFO Support:  0.0003341575887188398
+16:36:48,653 root INFO Confidence:  0.016501650165016504
+16:36:48,653 root INFO Lift:  3.1655665566556657
+16:36:48,654 root INFO =====================================
+16:36:48,654 root INFO Rule: other vegetables  ->  waffles
+16:36:48,654 root INFO Support:  0.0003341575887188398
+16:36:48,654 root INFO Confidence:  0.002736726874657909
+16:36:48,654 root INFO Lift:  3.4124703521255246
+16:36:48,654 root INFO =====================================
+16:36:48,654 root INFO Rule: other vegetables  ->  soft cheese
+16:36:48,654 root INFO Support:  0.0003341575887188398
+16:36:48,654 root INFO Confidence:  0.03333333333333333
+16:36:48,654 root INFO Lift:  4.122038567493113
+16:36:48,654 root INFO =====================================
+16:36:48,654 root INFO Rule: sausage  ->  yogurt
+16:36:48,654 root INFO Support:  0.00040098910646260775
+16:36:48,654 root INFO Confidence:  0.004669260700389105
+16:36:48,654 root INFO Lift:  3.037658602605312
+16:36:48,654 root INFO =====================================
+16:36:48,654 root INFO Rule: other vegetables  ->  whole milk
+16:36:48,654 root INFO Support:  0.0003341575887188398
+16:36:48,654 root INFO Confidence:  0.006459948320413437
+16:36:48,654 root INFO Lift:  5.685894512843897
+16:36:48,654 root INFO =====================================
+16:36:48,654 root INFO Rule: rolls/buns  ->  yogurt
+16:36:48,654 root INFO Support:  0.0003341575887188398
+16:36:48,654 root INFO Confidence:  0.005537098560354374
+16:36:48,654 root INFO Lift:  4.142580287929125
+16:36:48,654 root INFO =====================================

@@ -157,7 +157,6 @@ def convert_int(x):
 
 if __name__ == "__main__":
 
-# Content Based Recommender: 
     links_small, md = load_data()
     m = get_vote_counts(md)
     C = get_mean_vote(md)

@@ -1,5 +1,5 @@
-16:02:52,752 root INFO tfidf_matrix shape: (9099, 268124)
-16:02:53,625 root INFO Top 10 recommendations for the movie: The Godfather:
+16:37:28,56 root INFO tfidf_matrix shape: (9099, 268124)
+16:37:28,925 root INFO Top 10 recommendations for the movie: The Godfather:
 973      The Godfather: Part II
 8387                 The Family
 3509                       Made
@@ -11,7 +11,7 @@
 4221                    8 Women
 2159              Summer of Sam
 Name: title, dtype: object
-16:02:53,630 root INFO Top 10 recommendations for the movie: The Dark Knight:
+16:37:28,932 root INFO Top 10 recommendations for the movie: The Dark Knight:
 7931                      The Dark Knight Rises
 132                              Batman Forever
 1113                             Batman Returns

@@ -1,25 +1,25 @@
-16:00:26,973 root INFO tfidf_matrix shape: (9099, 268124)
-16:01:05,353 root INFO Top 10 movies for person with id 1, movie: Avatar:
+17:20:46,972 root INFO tfidf_matrix shape: (9099, 268124)
+17:21:19,919 root INFO Top 10 movies for person with id 1, movie: Avatar:
                                 title  vote_count  vote_average  year     id       est
-975                   A Grand Day Out       199.0           7.4  1990    530  3.240243
-2059                       The Matrix      9079.0           7.9  1999    603  3.182409
-6105               A Trip to the Moon       314.0           7.9  1902    775  3.087666
-7050                  Pride and Glory       243.0           6.3  2008  13150  2.826115
-1898                    A Simple Plan       191.0           6.9  1998  10223  2.818719
-4804                           Avalon        93.0           6.8  2001  10881  2.787869
-7460                       Green Zone       730.0           6.4  2010  22972  2.787642
-2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  2.774809
-2854                       The Hidden        85.0           6.7  1987  12476  2.774647
-3360                         The Dish        62.0           6.6  2000   5257  2.759954
-16:01:05,372 root INFO Top 10 movies for person with id 500, movie: Avatar:
+6105               A Trip to the Moon       314.0           7.9  1902    775  3.207196
+975                   A Grand Day Out       199.0           7.4  1990    530  3.174036
+2059                       The Matrix      9079.0           7.9  1999    603  3.138740
+7460                       Green Zone       730.0           6.4  2010  22972  2.944141
+1898                    A Simple Plan       191.0           6.9  1998  10223  2.902392
+3360                         The Dish        62.0           6.6  2000   5257  2.832508
+2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  2.820000
+4804                           Avalon        93.0           6.8  2001  10881  2.740989
+4506                 Tears of the Sun       582.0           6.4  2003   9567  2.659870
+4328                     Dog Soldiers       227.0           6.7  2002  11880  2.645501
+17:21:19,943 root INFO Top 10 movies for person with id 500, movie: Avatar:
                                 title  vote_count  vote_average  year     id       est
-2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  3.630826
-6105               A Trip to the Moon       314.0           7.9  1902    775  3.472537
-4643        Heaven Knows, Mr. Allison        27.0           6.8  1957  37103  3.402079
-1898                    A Simple Plan       191.0           6.9  1998  10223  3.344019
-3360                         The Dish        62.0           6.6  2000   5257  3.300517
-7460                       Green Zone       730.0           6.4  2010  22972  3.269380
-975                   A Grand Day Out       199.0           7.4  1990    530  3.267618
-5044                          The Men        18.0           6.5  1950   1882  3.157678
-7763                            Hanna      1284.0           6.5  2011  50456  3.025757
-5229                           Ambush        13.0           6.3  1999  49320  3.017184
+2910  Pandora and the Flying Dutchman        19.0           6.5  1951  38688  3.339247
+6105               A Trip to the Moon       314.0           7.9  1902    775  3.335592
+3360                         The Dish        62.0           6.6  2000   5257  3.261527
+1898                    A Simple Plan       191.0           6.9  1998  10223  3.261301
+2854                       The Hidden        85.0           6.7  1987  12476  3.124463
+4804                           Avalon        93.0           6.8  2001  10881  3.121077
+975                   A Grand Day Out       199.0           7.4  1990    530  3.093639
+7587                     The American       488.0           5.8  2010  27579  2.999056
+5044                          The Men        18.0           6.5  1950   1882  2.988151
+538             Hellraiser: Bloodline       111.0           4.9  1996   8766  2.982885

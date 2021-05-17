@@ -180,17 +180,21 @@ def get_similarity_between2movies(tfidf_matrix):
 
 if __name__ == "__main__":
 
-# Hybrid Recommender
+    # Load all dataset
     links_small, md = load_data()
+    # Load small dataset
     smd = get_small_movies_metatdata(md, links_small)
+    # Calculate quantitative matrix
     smd,tfidf_matrix = get_quantitative_matrix(smd)
     smd = smd.reset_index()
     indices = pd.Series(smd.index, index=smd['title'])
 
+    # Get similarity between two movies
     cosine_sim = get_similarity_between2movies(tfidf_matrix)
 
-
+    # Get movie ID, movie indices
     id_map, indices_map = get_movieID_indMovie(convert_int, smd)
+    # Training SVD algorithm with small data.
     svd = read_and_train_svd()
     logging.info(f"Top 10 movies for person with id 1, movie: Avatar:\n{hybrid(1, 'Avatar', indices, id_map, cosine_sim, smd, indices_map)}")
     logging.info(f"Top 10 movies for person with id 500, movie: Avatar:\n{hybrid(500, 'Avatar', indices, id_map, cosine_sim, smd, indices_map)}")
